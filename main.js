@@ -35,14 +35,14 @@ let PrevButton = React.createClass({
             </button>
         );
     },
-    handleClick: function () {
-
+    handleClick: function (e) {
+        this.props.slider.prevSlide();
     }
 });
 
 //nextButton component
 let NextButton = React.createClass({
-    render: function() {
+    render: function () {
         let disabled = false;
         if (this.props.slider.state.currentSlide >= slides.length - 1) {
             disabled = true;
@@ -53,7 +53,7 @@ let NextButton = React.createClass({
             </button>
         );
     },
-    handleClick: function() {
+    handleClick: function () {
         this.props.slider.nextSlide();
     }
 });
@@ -78,27 +78,27 @@ let Slider = React.createClass({
 let Main = React.createClass({
     getInitialState: function () {
         return {
-            currentSlide:0
+            currentSlide: 0
         }
     },
-    prevSlide: function() {
+    prevSlide: function () {
         let newSlide = this.state.currentSlide;
-        if (this.state['currentSlide'] > 0 ) {
+        if (this.state['currentSlide'] > 0) {
             newSlide = newSlide - 1;
         }
         this.setState({'currentSlide': newSlide});
     },
-    nextSlide: function() {
+    nextSlide: function () {
         let newSlide = this.state.currentSlide;
         if (this.state.currentSlide < slides.length - 1) {
             newSlide = newSlide + 1;
         }
         this.setState({'currentSlide': newSlide});
     },
-    componentWillMount: function() {
+    componentWillMount: function () {
         document.addEventListener('keydown', this.handleKeyDown, false);
     },
-    handleKeyDown: function(e) {
+    handleKeyDown: function (e) {
         if (e.keyCode === 37) {
             this.prevSlide();
         } else if (e.keyCode === 39) {
@@ -107,10 +107,12 @@ let Main = React.createClass({
     },
     render: function () {
         return (
-            <div className="slideshow" onKeyPress={this.handleKeyDown}>
-                <Slider slides={slides} currentSlide={this.state.currentSlide}/>
-                <PrevButton slider={this} />
-                <NextButton slider={this} />
+            <div>
+                <div className="slideshow" onKeyPress={this.handleKeyDown}>
+                    <Slider slides={slides} currentSlide={this.state.currentSlide}/>
+                </div>
+                <PrevButton slider={this}/>
+                <NextButton slider={this}/>
             </div>
         );
     }

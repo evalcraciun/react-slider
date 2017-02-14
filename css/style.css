@@ -1,0 +1,8 @@
+.slideshow {
+    height: 640px;
+    width: 100%;
+    overflow: hidden;
+}
+.slideshow .img{
+    background-size: 100%;
+}
