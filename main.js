@@ -1,24 +1,24 @@
 let slides = [
     {
-        'img': "https://cdn.pixabay.com/photo/2017/02/02/13/48/girl-2032802_960_720.jpg"
+        'img': "images/1.jpg"
     },
     {
-        'img': "https://cdn.pixabay.com/photo/2014/05/13/22/40/man-343674_960_720.jpg"
+        'img': "images/2.jpg"
     },
     {
-        'img': "https://cdn.pixabay.com/photo/2014/07/31/23/49/guitarist-407212_960_720.jpg"
+        'img': "images/3.jpg"
     },
     {
-        'img': "https://cdn.pixabay.com/photo/2014/05/21/15/18/musician-349790_960_720.jpg"
+        'img': "images/4.jpg"
     },
     {
-        'img': "https://cdn.pixabay.com/photo/2014/03/03/08/21/music-278795_960_720.jpg"
+        'img': "images/5.jpg"
     },
     {
-        'img': "https://cdn.pixabay.com/photo/2017/01/26/11/17/european-eagle-owl-2010346_960_720.jpg"
+        'img': "images/6.jpg"
     },
     {
-        'img': "https://cdn.pixabay.com/photo/2012/06/19/10/32/owl-50267_960_720.jpg"
+        'img': "images/7.jpg"
     }
 ];
 
