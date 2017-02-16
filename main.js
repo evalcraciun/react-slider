@@ -31,7 +31,7 @@ let PrevButton = React.createClass({
         }
         return (
             <button disabled={disabled} className="prev" onClick={this.handleClick}>
-                {disabled ? String.fromCharCode(8602) : String.fromCharCode(8612)}
+                Prev
             </button>
         );
     },
@@ -49,7 +49,7 @@ let NextButton = React.createClass({
         }
         return (
             <button disabled={disabled} className="next" onClick={this.handleClick}>
-                {disabled ? String.fromCharCode(8603) : String.fromCharCode(8614)}
+                Next
             </button>
         );
     },
@@ -105,14 +105,22 @@ let Main = React.createClass({
             this.nextSlide();
         }
     },
+    autoplay: function() {
+        let current = this.state.currentSlide;
+        if (current < slides.length) {
+            current = current +1;
+        }
+    },
     render: function () {
         return (
             <div>
                 <div className="slideshow" onKeyPress={this.handleKeyDown}>
                     <Slider slides={slides} currentSlide={this.state.currentSlide}/>
                 </div>
-                <PrevButton slider={this}/>
-                <NextButton slider={this}/>
+                <div className="nav">
+                    <PrevButton slider={this}/>
+                    <NextButton slider={this}/>
+                </div>
             </div>
         );
     }
